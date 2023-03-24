@@ -33,7 +33,7 @@
                 </div>
             <!--districtbutton-->
                 <div id="DistrictArea">
-                    <select id="ddlViewBy">
+                    <select id="Engdistritselect">
                         <option value="1">Central and Western</option>
                         <option value="2">Wan Chai<br></option>
                         <option value="3">Eastern<br></option>
@@ -53,7 +53,7 @@
                         <option value="17">Kwai Tsing<br></option>
                         <option value="18">Islands</option>
                      </select>
-                    <input type="button" onclick="Area1()" value="Search for district" class="btn">
+                    <input type="button" onclick="EnglishDistrictfunc()" value="Search for district" class="btn">
 
                 </div>        
             
@@ -111,8 +111,8 @@
 
 
         <script>
-            function Area1() {  
-                var e = document.getElementById("ddlViewBy");
+            function EnglishDistrictfunc()() {  
+                var e = document.getElementById("Engdistritselect");
                 var value = e.value;
                 areadistrict = e.options[e.selectedIndex].text;
                 var rowCount = tb3.rows.length;
