@@ -33,24 +33,24 @@
                 </div>
             <!--districtbutton-->
                 <div id="DistrictArea">
-                    <select id="Engdistritselect">
+                    <select id="Engdistrictselect">
                         <option value="1">Central and Western</option>
-                        <option value="2">Wan Chai<br></option>
-                        <option value="3">Eastern<br></option>
+                        <option value="2">Wan Chai</option>
+                        <option value="3">Eastern</option>
                         <option value="4">Southern</option>
                         <option value="5">Sham Shui Po</option>
-                        <option value="6">Yau Tsim Mong<br></option>
-                        <option value="7">Wong Tai Sin<br></option>
+                        <option value="6">Yau Tsim Mong</option>
+                        <option value="7">Wong Tai Sin</option>
                         <option value="8">Tuen Mun</option>
                         <option value="9">Kwun Tong</option>
-                        <option value="10">Kowloon City<br></option>
-                        <option value="11">Tai Po<br></option>
+                        <option value="10">Kowloon City</option>
+                        <option value="11">Tai Po</option>
                         <option value="12">Sai Kung</option>
                         <option value="13">Sha Tin Distict</option>
-                        <option value="14">Yuen Long<br></option>
-                        <option value="15">North<br></option>
+                        <option value="14">Yuen Long</option>
+                        <option value="15">North</option>
                         <option value="16">Tsuen Wan</option>
-                        <option value="17">Kwai Tsing<br></option>
+                        <option value="17">Kwai Tsing</option>
                         <option value="18">Islands</option>
                      </select>
                     <input type="button" onclick="EnglishDistrictfunc()" value="Search for district" class="btn">
@@ -112,7 +112,7 @@
 
         <script>
             function EnglishDistrictfunc()() {  
-                var e = document.getElementById("Engdistritselect");
+                var e = document.getElementById("Engdistrictselect");
                 var value = e.value;
                 areadistrict = e.options[e.selectedIndex].text;
                 var rowCount = tb3.rows.length;
