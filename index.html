@@ -99,7 +99,31 @@
             function Area1() {
                 var e = document.getElementById("ddlViewBy");
                 var value = e.value;
-                areadistrict = e.options[e.selectedIndex].text;               
+                areadistrict = e.options[e.selectedIndex].text;   
+                fetch("mydata.json")
+                .then(response => response.json())
+                .then(data => {
+                        if(data.items[i].District_en == areadistrict){
+                            let vTitle_enwithdistrict = data.items[i].Title_en;
+                            let vDistrict_enwithdistrict = data.items[i].District_en;
+                            let vRoute_enwithdistrict = data.items[i].Route_en;
+                            let vHowToAccess_enwithdistrict = data.items[i].HowToAccess_en;
+                            let vMapURL_enwithdistrict = data.items[i].MapURL_en;
+                            let vLatitudewithdistrict = data.items[i].Latitude;
+                            let vLongitudewithdistrict = data.items[i].Longitude;
+                                document.querySelector("#tb3").innerHTML += `
+                                    <tbody>
+                                        <tr>
+                                            <td>${vTitle_enwithdistrict}</td>
+                                            <td>${vDistrict_enwithdistrict}</td>
+                                            <td>${vRoute_enwithdistrict}</td>
+                                            <td>${vHowToAccess_enwithdistrict}</td>
+                                            <td>${vLatitudewithdistrict}</td>
+                                            <td>${vLongitudewithdistrict}</td>
+                                        </tr>
+                                    <tbody>`;
+                        }
+                  })            
                 document.getElementById("engVer").style.display = "none";
                 document.getElementById("chiVer").style.display = "none";
                 document.getElementById("toptitle").innerHTML = "Fitness Walking Tracks";
@@ -156,30 +180,7 @@
                                 <tbody>`;
                     }
                 })
-                fetch("mydata.json")
-                .then(response => response.json())
-                .then(data => {
-                        if(data.items[i].District_en == areadistrict){
-                            let vTitle_enwithdistrict = data.items[i].Title_en;
-                            let vDistrict_enwithdistrict = data.items[i].District_en;
-                            let vRoute_enwithdistrict = data.items[i].Route_en;
-                            let vHowToAccess_enwithdistrict = data.items[i].HowToAccess_en;
-                            let vMapURL_enwithdistrict = data.items[i].MapURL_en;
-                            let vLatitudewithdistrict = data.items[i].Latitude;
-                            let vLongitudewithdistrict = data.items[i].Longitude;
-                                document.querySelector("#tb3").innerHTML += `
-                                    <tbody>
-                                        <tr>
-                                            <td>${vTitle_enwithdistrict}</td>
-                                            <td>${vDistrict_enwithdistrict}</td>
-                                            <td>${vRoute_enwithdistrict}</td>
-                                            <td>${vHowToAccess_enwithdistrict}</td>
-                                            <td>${vLatitudewithdistrict}</td>
-                                            <td>${vLongitudewithdistrict}</td>
-                                        </tr>
-                                    <tbody>`;
-                        }
-                  })
+                
                 
         </script>
     </body>
