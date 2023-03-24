@@ -96,10 +96,7 @@
 
 
         <script>
-            function Area1() {
-                var e = document.getElementById("ddlViewBy");
-                var value = e.value;
-                areadistrict = e.options[e.selectedIndex].text;   
+            function Area1() {   
                 fetch("mydata.json")
                 .then(response => response.json())
                 .then(data => {
