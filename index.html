@@ -100,6 +100,7 @@
                 fetch("mydata.json")
                 .then(response => response.json())
                 .then(data => {
+                    for (var i = 0; i<data.items.length; i++){
                         if(data.items[i].District_en == "Central and Western"){
                             let vTitle_enwithdistrict = data.items[i].Title_en;
                             let vDistrict_enwithdistrict = data.items[i].District_en;
@@ -120,7 +121,9 @@
                                         </tr>
                                     <tbody>`;
                         }
-                  })            
+                    }
+                  })
+
                 document.getElementById("engVer").style.display = "none";
                 document.getElementById("chiVer").style.display = "none";
                 document.getElementById("toptitle").innerHTML = "Fitness Walking Tracks";
